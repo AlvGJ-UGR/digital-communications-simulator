@@ -2,9 +2,9 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status: Stable](https://img.shields.io/badge/Status-Stable-brightgreen)](https://github.com/your-username/digital-communications-simulator)
-[![Schemes: BPSK·QPSK·QAM](https://img.shields.io/badge/Schemes-BPSK%20%C2%B7%20QPSK%20%C2%B7%20M--QAM-blue)](https://github.com/your-username/digital-communications-simulator)
-[![Channel: AWGN · Rayleigh](https://img.shields.io/badge/Channel-AWGN%20%C2%B7%20Rayleigh-orange)](https://github.com/your-username/digital-communications-simulator)
+[![Status: Stable](https://img.shields.io/badge/Status-Stable-brightgreen)](https://github.com/AlvGJ-UGR/digital-communications-simulator)
+[![Schemes: BPSK·QPSK·QAM](https://img.shields.io/badge/Schemes-BPSK%20%C2%B7%20QPSK%20%C2%B7%20M--QAM-blue)](https://github.com/AlvGJ-UGR/digital-communications-simulator)
+[![Channel: AWGN · Rayleigh](https://img.shields.io/badge/Channel-AWGN%20%C2%B7%20Rayleigh-orange)](https://github.com/AlvGJ-UGR/digital-communications-simulator)
 
 A complete Python simulator for digital baseband communications. Models the full transmit–receive chain — bit generation, modulation, channel noise, demodulation, and BER analysis — for **BPSK, QPSK, 16-QAM and 64-QAM** over **AWGN** and **Rayleigh fading** channels.
 
@@ -165,8 +165,8 @@ Full derivations and the channel model equations are in [`docs/theory.md`](docs/
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/digital-communications-simulator.git
-cd digital-communications-simulator
+git clone https://github.com/AlvGJ-UGR/Digital-communications-system-simulator.git
+cd Digital-communications-system-simulator
 pip install -r requirements.txt
 ```
 
