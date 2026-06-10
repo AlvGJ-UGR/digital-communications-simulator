@@ -1,7 +1,7 @@
 # 📡 Digital Communications System Simulator
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![Status](https://img.shields.io/badge/Status-Completed-green.svg)
+![Status](https://img.shields.io/badge/Status-Starting-green.svg)
 ![Domain](https://img.shields.io/badge/Domain-Telecommunications%20%7C%20RF%20Engineering-orange.svg)
 
 ---
