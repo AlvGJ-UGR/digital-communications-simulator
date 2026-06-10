@@ -1,145 +1,161 @@
-# 📡 Digital Communication System Simulator
+# 📡 Digital Communications System Simulator
 
-Simulador completo de un sistema de comunicaciones digitales que implementa modulaciones básicas (BPSK, QPSK y M-QAM), canal AWGN y análisis de BER (Bit Error Rate).
-
-Este proyecto está orientado a telecomunicaciones digitales, procesamiento de señales y simulación de canales.
-
----
-
-## 🎯 Objetivo
-
-Simular un sistema de transmisión digital completo:
-
-Bits → Modulación → Canal AWGN → Demodulación → BER
-
-El objetivo es comparar el rendimiento de diferentes esquemas de modulación bajo distintas condiciones de SNR.
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Status](https://img.shields.io/badge/Status-Completed-green.svg)
+![Domain](https://img.shields.io/badge/Domain-Telecommunications%20%7C%20RF%20Engineering-orange.svg)
 
 ---
 
-## ⚙️ Características
+## 🧠 Overview
 
-- Generación de bits aleatorios
-- Modulaciones implementadas:
-  - BPSK
-  - QPSK
-  - 16-QAM
-- Canal AWGN (Additive White Gaussian Noise)
-- Demodulación coherente
-- Cálculo de BER
-- Análisis BER vs SNR
-- Diagramas de constelación
-- Comparación de eficiencia espectral
+This project implements a **link-level digital communication system simulator**, modeling how information is transmitted over a real wireless channel under noise, interference, and propagation effects.
+
+It replicates the core behavior of real-world systems such as:
+
+- 📶 WiFi (802.11)
+- 📡 LTE / 5G
+- 🛰️ Satellite communications
+- 📻 General RF communication systems
 
 ---
 
-## 📊 Resultados esperados
+## 🎯 Objective
 
-El proyecto permite visualizar:
+To analyze the performance of different digital modulation schemes under realistic channel conditions by evaluating:
 
-- Curvas BER vs SNR
-- Constelaciones con y sin ruido
-- Comparación entre modulaciones
+- Bit Error Rate (BER)
+- Signal-to-Noise Ratio (SNR)
+- Symbol constellations
+- Spectral efficiency trade-offs
 
 ---
 
-## 🧠 Fundamento teórico
+## 🔁 System Architecture
 
-El sistema modela un canal AWGN:
+The communication chain is modeled as:
+Bits
+→ Modulation
+→ Pulse Shaping
+→ Wireless Channel (AWGN + Fading + Path Loss)
+→ Receiver Front-End
+→ Demodulation
+→ Decision Logic
+→ BER Evaluation
+
+---
+
+## 📡 Channel Model
+
+The wireless channel is modeled as:
 
 r(t) = s(t) + n(t)
 
-donde:
-- s(t): señal transmitida
-- n(t): ruido gaussiano blanco
+Where:
+- s(t): transmitted signal
+- n(t): additive white Gaussian noise
 
-La métrica principal es el BER:
+Advanced extensions include:
 
-BER = número de bits erróneos / total de bits transmitidos
+- 🌪 Rayleigh / Rician fading
+- 📉 Path loss modeling
+- 🌫 Shadowing effects
+- 📡 Multipath propagation
 
 ---
 
-## 📁 Estructura del proyecto
+## 📶 Modulation Schemes Implemented
+
+### BPSK
+- 1 bit/symbol
+- Maximum robustness
+- Low spectral efficiency
+
+### QPSK
+- 2 bits/symbol
+- Balanced performance
+
+### 16-QAM
+- 4 bits/symbol
+- High spectral efficiency
+- More sensitive to noise
+
+---
+
+## 📊 Key Performance Metrics
+
+### Bit Error Rate (BER)
+
+BER = number of erroneous bits / total transmitted bits
+
+---
+
+### Signal-to-Noise Ratio (SNR)
+
+SNR = Eb / N0
+
+---
+
+### Error Vector Magnitude (EVM)
+
+EVM = sqrt( E[|s - r|²] / E[|s|²] )
+
+---
+
+### Channel Capacity (Shannon Limit)
+
+C = B log2(1 + SNR)
+
+---
+
+## 📈 Expected Results
+
+The simulator generates:
+
+- 📉 BER vs SNR curves (log scale)
+- 📡 Constellation diagrams (ideal vs noisy)
+- 📊 Modulation comparison charts
+- ⚖️ Trade-off analysis (robustness vs efficiency)
+
+---
+
+## 🧪 Engineering Insights
+
+This project demonstrates:
+
+- Digital communication system design
+- RF channel modeling
+- Statistical signal processing
+- Monte Carlo simulation techniques
+- Trade-off analysis in wireless systems
+
+---
+
+## 🧱 Project Structure
+
+```text
 digital-communications-simulator/
 │
 ├── src/
-│ ├── modulation/
-│ ├── demodulation/
-│ ├── channel/
-│ ├── metrics/
-│ ├── utils/
+│   ├── modulation/
+│   ├── demodulation/
+│   ├── channel/
+│   ├── coding/
+│   ├── metrics/
+│   ├── utils/
 │
 ├── simulations/
+│   ├── ber_vs_snr.py
+│   ├── constellation_analysis.py
+│
 ├── docs/
+│   ├── theory.md
+│   ├── rf_models.md
+│   ├── equations.md
+│
 ├── results/
+│   ├── plots/
+│
 ├── main.py
+├── config.yaml
+├── requirements.txt
 └── README.md
-
----
-
-
-# 📡 Modelo del sistema
-
-El canal se modela como:
-
-r(t) = s(t) + n(t)
-
-donde:
-- s(t): señal transmitida
-- n(t): ruido gaussiano blanco
-
----
-
-# 📶 Modulaciones implementadas
-
-## BPSK
-- 1 bit por símbolo
-- Alta robustez al ruido
-
-## QPSK
-- 2 bits por símbolo
-- Compromiso entre eficiencia y robustez
-
-## 16-QAM
-- 4 bits por símbolo
-- Alta eficiencia espectral, más sensible al ruido
-
----
-
-# 📉 Resultados esperados
-
-El proyecto genera:
-
-- Curvas BER vs SNR
-- Diagramas de constelación
-- Comparación entre modulaciones
-- Análisis de robustez del sistema
-
----
-
-# 📈 Ejemplo de análisis
-
-- BPSK → mejor rendimiento en bajo SNR
-- QPSK → equilibrio entre velocidad y robustez
-- 16-QAM → mayor velocidad, más errores en ruido
-
----
-
-# 🧪 Posibles mejoras (nivel avanzado)
-
-- Canal con fading (Rayleigh / Rician)
-- OFDM (base de WiFi / LTE / 5G)
-- Codificación de canal (Hamming, convolutional, LDPC)
-- Sincronización de portadora y símbolo
-- Interfaz gráfica (Streamlit o Dash)
-- Simulación tipo SDR (Software Defined Radio)
-
----
-
-# 🚀 Cómo ejecutar
-
-```bash
-pip install -r requirements.txt
-python main.py
-
-
-
